@@ -1,10 +1,8 @@
 package com.example.dbdependencyinjection.Controllers;
 
-import com.example.dbdependencyinjection.services.GreetingServicesImpl;
+import com.example.dbdependencyinjection.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SetterInjectedControllerTest {
 
@@ -13,7 +11,7 @@ class SetterInjectedControllerTest {
     @BeforeEach
     void setUp() {
         controller= new SetterInjectedController();
-        controller.setGreetingServices(new GreetingServicesImpl());
+        controller.setGreetingServices(new ConstructorGreetingService());
     }
 
     @Test
