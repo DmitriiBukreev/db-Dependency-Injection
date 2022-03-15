@@ -1,9 +1,6 @@
 package com.example.dbdependencyinjection;
 
-import com.example.dbdependencyinjection.Controllers.ConstructorInjectedController;
-import com.example.dbdependencyinjection.Controllers.MyController;
-import com.example.dbdependencyinjection.Controllers.PropertyInjectedController;
-import com.example.dbdependencyinjection.Controllers.SetterInjectedController;
+import com.example.dbdependencyinjection.Controllers.*;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,9 +12,14 @@ public class DbDependencyInjectionApplication {
     public static void main(String[] args) {
        ApplicationContext ctx = SpringApplication.run(DbDependencyInjectionApplication.class, args);
 
+        I18Controller i18Controller= (I18Controller) ctx.getBean("i18Controller");
+        System.out.println(i18Controller.sayHello());
+
         MyController myController= (MyController) ctx.getBean("myController");
-        String greeting = myController.sayHello();
-        System.out.println(greeting);
+
+        System.out.println("--------Primary bean");
+
+        System.out.println(myController.sayHello());
 
         System.out.println("------Property");
         PropertyInjectedController propertyInjectedController= (PropertyInjectedController) ctx.getBean("propertyInjectedController");
@@ -30,6 +32,8 @@ public class DbDependencyInjectionApplication {
         System.out.println("------Constructor");
         ConstructorInjectedController constructorInjectedController= (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
         System.out.println(constructorInjectedController.getGreeting());
+
+
 
     }
 
