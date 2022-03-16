@@ -1,4 +1,4 @@
-package com.example.dbdependencyinjection.Controllers;
+package com.example.dbdependencyinjection.controllers;
 
 import com.example.dbdependencyinjection.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;

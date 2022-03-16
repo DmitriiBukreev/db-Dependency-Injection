@@ -1,4 +1,4 @@
-package com.example.dbdependencyinjection.Controllers;
+package com.example.dbdependencyinjection.controllers;
 
 import com.example.dbdependencyinjection.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,7 +10,7 @@ class PropertyInjectedControllerTest {
     @BeforeEach
     void setUp() {
         controller = new PropertyInjectedController();
-        controller.greetingServices = new ConstructorGreetingService();
+        controller.greetingService = new ConstructorGreetingService();
     }
 
     @Test

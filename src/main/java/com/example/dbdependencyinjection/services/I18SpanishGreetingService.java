@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Profile("SP")
 @Qualifier("i18Service")
 @Service
-public class I18SpanishGreetingService implements GreetingServices{
+public class I18SpanishGreetingService implements GreetingService {
     @Override
     public String sayGreeting() {
         return "Hello World from Spanish service";

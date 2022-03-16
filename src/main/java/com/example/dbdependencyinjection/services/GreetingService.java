@@ -1,6 +1,6 @@
 package com.example.dbdependencyinjection.services;
 
-public interface GreetingServices {
+public interface GreetingService {
 
     String sayGreeting();
 }

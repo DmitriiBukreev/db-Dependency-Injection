@@ -1,7 +1,6 @@
 package com.example.dbdependencyinjection;
 
-import com.example.dbdependencyinjection.Controllers.*;
-import org.springframework.boot.ApplicationRunner;
+import com.example.dbdependencyinjection.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -11,6 +10,12 @@ public class DbDependencyInjectionApplication {
 
     public static void main(String[] args) {
        ApplicationContext ctx = SpringApplication.run(DbDependencyInjectionApplication.class, args);
+
+
+
+     PetController petController = ctx.getBean("petController", PetController.class);
+     System.out.println("--- The Best Pet is ---");
+     System.out.println(petController.whichPetIsTheBest());
 
         I18Controller i18Controller= (I18Controller) ctx.getBean("i18Controller");
         System.out.println(i18Controller.sayHello());

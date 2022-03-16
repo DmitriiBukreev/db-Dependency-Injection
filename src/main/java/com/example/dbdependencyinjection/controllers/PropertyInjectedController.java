@@ -1,6 +1,6 @@
-package com.example.dbdependencyinjection.Controllers;
+package com.example.dbdependencyinjection.controllers;
 
-import com.example.dbdependencyinjection.services.GreetingServices;
+import com.example.dbdependencyinjection.services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -10,11 +10,11 @@ public class PropertyInjectedController {
 
     @Qualifier("propertyInjectedGreetingService")
     @Autowired
-    public GreetingServices greetingServices;
+    public GreetingService greetingService;
 
 
     public String getGreeting() {
-        return greetingServices.sayGreeting();
+        return greetingService.sayGreeting();
     }
 
 }
