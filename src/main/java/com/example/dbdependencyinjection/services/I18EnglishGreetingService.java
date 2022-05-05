@@ -1,12 +1,15 @@
 package com.example.dbdependencyinjection.services;
 
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Service;
-@Profile({"EN", "default"})
-@Qualifier("i18Service")
-@Service
+
+import com.example.dbdependencyinjection.repository.EnglishGreetingRepo;
+
 public class I18EnglishGreetingService implements GreetingService {
+    private final EnglishGreetingRepo englishGreetingRepo;
+
+    public I18EnglishGreetingService(EnglishGreetingRepo englishGreetingRepo) {
+        this.englishGreetingRepo = englishGreetingRepo;
+    }
+
     @Override
     public String sayGreeting() {
         return "Hello World from English service";
