@@ -1,4 +1,4 @@
-package com.example.dbdependencyinjection.services;
+package pets;
 
 
 import org.springframework.context.annotation.Profile;

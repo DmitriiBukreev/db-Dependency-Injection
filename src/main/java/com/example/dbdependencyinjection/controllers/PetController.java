@@ -1,7 +1,7 @@
 package com.example.dbdependencyinjection.controllers;
 
 
-import com.example.dbdependencyinjection.services.PetService;
+import pets.PetService;
 import org.springframework.stereotype.Controller;
 
 @Controller
